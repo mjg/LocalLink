@@ -4,8 +4,7 @@
 <div class="infoTab" id="whats-new">
 <h5 class="infoHeader">What's New</h5>
 <ul>
-<li>News item goes here</li>
-<li>More news items go here</li>
+<li>Version 0.1 for Firefox</li>
 <li><a href="http://www.mozdev.org/">mozdev.org</a></li>
 </ul>
 </div>
@@ -13,8 +12,6 @@
 <div class="infoTab" id="other-stuff">
 <h5 class="infoHeader">Other Stuff</h5>
 <ul>
-<li>stuff goes here</li>
-<li>more stuff goes here</li>
 </ul>
 </div>
 
@@ -33,7 +30,46 @@
 <!-- ***************** INFO/NEWS *************** -->
 
 <!-- MAIN CONTENT -->
-<p>The <strong>locallink</strong> project content goes here.</p>
+<p>Have you ever wondered why <CODE>file://</CODE>-links work from local files (which have <CODE>file://</CODE>-URLs) but not from webpages (which have <CODE>http://</CODE>-URLs)?
+Do you have collections of local links which you want to access through your webpage? 
+The <strong>LocalLink</strong> extension for Mozilla Firefox allows you to open any such link from the context menu, no matter where the page containing the link resides:  
+right click on the link, choose &quot;Open Link in Local Context&quot;, and the link will be opened in a new window. </p>
 
-<p><strong>Note:</strong> If you want to add an area for user feedback to any of your pages, take a look at the <a href="notes.html">notes.html</a>
-template.</p>
+<H3>Background</H3>
+<P>Mozilla employs a strict security model which distinguishes between &quot;chrome&quot; (components of your browser, accessible by <CODE>chrome://</CODE>-URLs), &quot;local&quot; (files on your machine, i.e. accessible by <CODE>file://</CODE>-links) and outside.
+&quot;chrome&quot; can access everything, &quot;local&quot; can access everything but &quot;chrome&quot;, outside content can only access outside content.
+There are many good reasons for this strict behaviour.
+Imagine outside JavaScript code being allowed to access your local files, or even your browser!
+Even with JavaScript turned off, outside webpages could check for the presence of specific local files on your machine if Mozilla followed local <CODE>IMG</CODE>-links and such.
+</P>
+<P> The discussion about the consequences of the security model for the user tends to be heated. For more information see, among many others, the following bugs: 
+</P>
+<UL>
+<LI> <A HREF="https://bugzilla.mozilla.org/show_bug.cgi?id=84128">bug 84128</A>
+<LI> <A HREF="https://bugzilla.mozilla.org/show_bug.cgi?id=122022">bug 122022</A>
+</UL>
+
+<H3>How it works</H3>
+<P>As explained above, &quot;chrome&quot; can do anything. 
+This is why you can enter <CODE>file://</CODE> in the location bar and hit enter.
+Since extensions are part of &quot;chrome&quot; they are allowed to open windows with local links.
+</P>
+
+<H3>Security info and disclaimer</H3>
+<P>As far as I can tell, this extension does not add any security holes.
+&quot;chrome&quot; can do anything even without this extension.
+This extension allows to overcome the local/outside barrier by following local links <strong>on user request</strong> (through the context menu). 
+It does not enable any automatic processing of local links, such as <CODE>IMG</CODE>, JavaScript etc.
+Yet, <strong>you use this extension at your own risk and responsibility</strong>. 
+Make sure you know the source of the webpage containing the local link.
+</P>
+
+<H3>To do</H3>
+<P> Feel free to tell me your suggestions through the <A HREF="list.html" text="mailing list">mailing list</A>.
+My current plans are:</P>
+<UL>
+<LI> Version for Mozilla Suite
+<LI> Version for Mozilla Thunderbird
+<LI> Preferences or additional menu entries for opening the link in the current tab, a new tab, or a new window
+</UL>
+
