@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- This overlay is for Thunderbird -->
+
+<!DOCTYPE overlay [
+<!ENTITY % brandDTD SYSTEM "chrome://global/locale/brand.dtd" >
+%brandDTD;
+<!ENTITY % openDialogDTD SYSTEM "chrome://communicator/locale/openLocation.dtd" >
+%openDialogDTD;
+<!ENTITY % tasksDTD SYSTEM "chrome://communicator/locale/tasksOverlay.dtd" >
+%tasksDTD;
+]>
+
+<overlay id="locallink" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_locallink" src="chrome://global/locale/appstrings.properties"/>
+  </stringbundleset>
+  <script language="javascript" type="application/x-javascript" src="locallink.js"/>
+  <script language="javascript" type="application/x-javascript"><![CDATA[//
+    /////////////////////////////////////////////////////
+    window.addEventListener("load", LocalLink.onMailWindowLoad, true);
+    ////////////
+]]></script>
+
+  <popup id="messagePaneContext">
+    <menu id="llOpenLocalLink" label="&openWhere.label;" insertbefore="context-savelink">
+     <menupopup>
+      <menuitem id="llOpenInMail" label="&brandShortName;" oncommand="LocalLink.openLinkInMail(event)"/>
+      <menuitem id="llOpenFromMail" label="&navigatorCmd.label;" oncommand="LocalLink.openLinkFromMail(event)"/>
+     </menupopup>
+    </menu>
+ </popup>
+
+</overlay>
+

@@ -6,7 +6,23 @@ Your browser may block the attempt to install software from this site. In this c
 </P>
 
 <UL>
+<LI> <a href="http://downloads.mozdev.org/locallink/locallink-0.2.xpi">locallink-0.2.xpi</a>:
+Version 0.2 adds submenus for opening in new tab/new window/etc. 
+Works with Firefox (tested with 1.0PR, should work with 0.8+ through 1.0) and Thunderbird (tested with 0.8, should work with 0.7 through 0.8+).
+<BR>
+When updating from 0.1, I suggest you remove the old extension first.
 <LI> <a href="http://downloads.mozdev.org/locallink/locallink-0.1.xpi">locallink-0.1.xpi</a>:
 Version 0.1 is bare bones. No preferences, no fancy dialogues. 
 Works only with Firefox (tested with 1.0PR, should work with 0.8+ through 1.0).
 </UL>
+
+<h5> Protocol handlers</h5>
+<P>
+If you want to pass links from Thunderbird to an external browser using LocalLink, handlers for the appropriate protocols have to be set up. For local links the protocol is <code>file</code>.
+You set up the handlers in the same way in which you make Thunderbird open links in Firefox.
+</P>
+<h5>Localisation</h5>
+<P>
+From version 0.2 on, LocalLink uses &quot;universal localisation&quot;:
+it takes all labels from the main application, so that they are localized whenever you have a language pack for the latter.
+</P>

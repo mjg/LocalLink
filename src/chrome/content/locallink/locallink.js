@@ -63,8 +63,13 @@ var LocalLink = {
   // This function is invoked in window (?) context,
   // so use 'LocalLink' instead of 'this'.
   // event.originalTarget is the loaded document.
-  onWindowLoad : function(event) {
+  onBrowserWindowLoad : function(event) {
     var parentPopup = document.getElementById('contentAreaContextMenu');
+    parentPopup.addEventListener("popupshown", LocalLink._onParentPopupShown, true);
+  },
+
+  onMailWindowLoad : function(event) {
+    var parentPopup = document.getElementById('messagePaneContext');
     parentPopup.addEventListener("popupshown", LocalLink._onParentPopupShown, true);
   },
 
@@ -81,14 +86,51 @@ var LocalLink = {
       document.getElementById('llOpenLocalLink').setAttribute('hidden', true);
   },
 
-  openLink : function() {
+  openLinkInThisTab : function(event) {
     if (this._overLink == null)
       return;
 
-  //  var fixupURI = this._getFixupURI(this._overLink.uri);
-  // open link in new window;
-  document.commandDispatcher.focusedWindow.open(this._overLink.uri);
+    window.loadURI(this._overLink.uri, null, null);
   },
+
+  openLinkInNewTab : function(event) {
+    if (this._overLink == null)
+      return;
+
+    openNewTabWith(this._overLink.uri, this._overLink, event, false, null);
+  },
+
+  openLinkInNewWindow : function(event) {
+    if (this._overLink == null)
+      return;
+
+    openNewWindowWith(this._overLink.uri, this._overLink, false, null);
+  },
+
+
+  openLinkInMail : function(event) {
+    if (this._overLink == null)
+      return;
+
+    var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance(Components.interfaces.nsIMessenger);
+    messenger.SetWindow(window,null);
+    messenger.OpenURL(this._overLink.uri);
+  },
+
+  openLinkFromMail : function() {
+    if (this._overLink == null)
+      return;
+
+    var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance();
+    messenger = messenger.QueryInterface(Components.interfaces.nsIMessenger);
+    try { messenger.launchExternalURL(this._overLink.uri); }
+    catch(e) {
+      var proto = this._overLink.uri.split(/:/)[0];
+      var bundle = document.getElementById("bundle_locallink");
+      alert(bundle.getString("protocolNotFound").replace(/%S/, proto));
+    }
+  },
+
 
 //  _getFixupURI : function(uri) {
 //   try {
@@ -103,5 +145,5 @@ var LocalLink = {
 };
 
 // register listener so that we can update the popup
-
-window.addEventListener("load", LocalLink.onWindowLoad, true);
+// This is done from the corresponding xul 
+// window.addEventListener("load", LocalLink.onWindowLoad, true);
