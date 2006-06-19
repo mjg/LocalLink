@@ -97,14 +97,14 @@ var LocalLink = {
     if (this._overLink == null)
       return;
 
-    openNewTabWith(this._overLink.uri, this._overLink, event, false, null);
+    openNewTabWith(this._overLink.uri, null, null, event);
   },
 
   openLinkInNewWindow : function(event) {
     if (this._overLink == null)
       return;
 
-    openNewWindowWith(this._overLink.uri, this._overLink, false, null);
+    openNewWindowWith(this._overLink.uri, null, null);
   },
 
 

@@ -7,13 +7,12 @@
   </RDF:Seq>
 
   <RDF:Description about="urn:mozilla:package:locallink"
-    chrome:displayName="LocalLink 0.2"
+    chrome:displayName="LocalLink"
     chrome:author="Michael J Gruber"
     chrome:authorURL="http://locallink.mozdev.org"
     chrome:name="locallink"
     chrome:description="Open links in local context."
-    chrome:extension="true"
-    chrome:localeVersion="0.1">
+    chrome:extension="true">
   </RDF:Description>
 
   <RDF:Seq about="urn:mozilla:overlays">
@@ -27,5 +26,6 @@
 
   <RDF:Seq about="chrome://messenger/content/mailWindowOverlay.xul">
     <RDF:li>chrome://locallink/content/llMailWindowOverlay.xul</RDF:li>
+  </RDF:Seq>
 
 </RDF:RDF>

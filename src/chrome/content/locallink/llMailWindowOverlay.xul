@@ -2,9 +2,7 @@
 <!-- This overlay is for Thunderbird -->
 
 <!DOCTYPE overlay [
-<!ENTITY % brandDTD SYSTEM "chrome://global/locale/brand.dtd" >
-%brandDTD;
-<!ENTITY % openDialogDTD SYSTEM "chrome://communicator/locale/openLocation.dtd" >
+<!ENTITY % openDialogDTD SYSTEM "chrome://communicator/locale/contentAreaCommands.dtd" >
 %openDialogDTD;
 <!ENTITY % tasksDTD SYSTEM "chrome://communicator/locale/tasksOverlay.dtd" >
 %tasksDTD;
@@ -22,10 +20,10 @@
 ]]></script>
 
   <popup id="messagePaneContext">
-    <menu id="llOpenLocalLink" label="&openWhere.label;" insertbefore="context-savelink">
+    <menu id="llOpenLocalLink" label="&openLinkInWindowCmd.label;" insertbefore="context-savelink">
      <menupopup>
-      <menuitem id="llOpenInMail" label="&brandShortName;" oncommand="LocalLink.openLinkInMail(event)"/>
-      <menuitem id="llOpenFromMail" label="&navigatorCmd.label;" oncommand="LocalLink.openLinkFromMail(event)"/>
+      <menuitem id="llOpenInMail" label="&openLinkInWindowCmd.label;" oncommand="LocalLink.openLinkInMail(event)"/>
+      <menuitem id="llOpenFromMail" label="&openLinkCmd.label;" oncommand="LocalLink.openLinkFromMail(event)"/>
      </menupopup>
     </menu>
  </popup>
