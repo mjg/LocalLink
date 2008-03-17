@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <!-- This overlay is for Firefox -->
 
-<!DOCTYPE overlay SYSTEM "chrome://browser/locale/browser.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://locallink/locale/locallink.dtd">
 
 <overlay id="locallink" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script language="javascript" type="application/x-javascript" src="chrome://browser/content/contentAreaUtils.js"/>
   <script language="javascript" type="application/x-javascript" src="locallink.js"/>
   <script language="javascript" type="application/x-javascript"><![CDATA[//
     /////////////////////////////////////////////////////
-    window.addEventListener("load", LocalLink.onBrowserWindowLoad, true);
+    window.addEventListener("load", function () { gBrowser.addEventListener("load", LocalLink.onBrowserWindowLoad, true); }, false);
     ////////////
 ]]></script>
 
   <popup id="contentAreaContextMenu">
-    <menu id="llOpenLocalLink" label="&openLinkInWindowCmd.label;" insertbefore="context-sep-open">
+    <menu id="llOpenLocalLink" label="&llOpenLocalLink.label;" insertbefore="context-sep-open">
      <menupopup>
-      <menuitem id="llOpenInThisTab" label="&openLinkInWindowCmd.label;" oncommand="LocalLink.openLinkInThisTab(event)"/>
-      <menuitem id="llOpenInNewTab" label="&openLinkCmdInTab.label;" oncommand="LocalLink.openLinkInNewTab(event)"/>
-      <menuitem id="llOpenInNewWindow" label="&openLinkCmd.label;" oncommand="LocalLink.openLinkInNewWindow(event)"/>
+      <menuitem id="llOpenInThisTab" label="&llOpenInThisTab.label;" oncommand="LocalLink.openLinkInThisTab(event)"/>
+      <menuitem id="llOpenInNewTab" label="&llOpenInNewTab.label;" oncommand="LocalLink.openLinkInNewTab(event)"/>
+      <menuitem id="llOpenInNewWindow" label="&llOpenInNewWindow.label;" oncommand="LocalLink.openLinkInNewWindow(event)"/>
      </menupopup>
     </menu>
   </popup>

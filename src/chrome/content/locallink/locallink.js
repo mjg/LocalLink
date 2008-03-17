@@ -146,4 +146,4 @@ var LocalLink = {
 
 // register listener so that we can update the popup
 // This is done from the corresponding xul 
-// window.addEventListener("load", LocalLink.onWindowLoad, true);
+// gBrowser.addEventListener("load", LocalLink.onWindowLoad, true);
