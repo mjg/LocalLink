@@ -2,7 +2,3 @@
 <!ENTITY llOpenInThisTab.label "in This Tab">
 <!ENTITY llOpenInNewTab.label "in New Tab">
 <!ENTITY llOpenInNewWindow.label "in New Window">
-<!ENTITY llOpenInMail.label "in Mail Window">
-<!ENTITY llOpenFromMail.label "in Browser">
-
-
