@@ -5,3 +5,4 @@ overlay chrome://browser/content/browser.xul chrome://locallink/content/llBrowse
 locale locallink en-GB jar:chrome/locallink.jar!/locale/en-GB/locallink/
 locale locallink en-US jar:chrome/locallink.jar!/locale/en-US/locallink/
 locale locallink de-DE jar:chrome/locallink.jar!/locale/de-DE/locallink/
+locale locallink fr jar:chrome/locallink.jar!/locale/fr/locallink/
