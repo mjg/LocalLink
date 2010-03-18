@@ -68,10 +68,10 @@ var LocalLink = {
     parentPopup.addEventListener("popupshown", LocalLink._onParentPopupShown, true);
   },
 
-  onMailWindowLoad : function(event) {
-    var parentPopup = document.getElementById('messagePaneContext');
-    parentPopup.addEventListener("popupshown", LocalLink._onParentPopupShown, true);
-  },
+  // onMailWindowLoad : function(event) {
+  //  var parentPopup = document.getElementById('messagePaneContext');
+  //  parentPopup.addEventListener("popupshown", LocalLink._onParentPopupShown, true);
+  // },
 
   // This function is invoked in window (?) context,
   // so use 'LocalLink' instead of 'this'
@@ -108,28 +108,28 @@ var LocalLink = {
   },
 
 
-  openLinkInMail : function(event) {
-    if (this._overLink == null)
-      return;
+  // openLinkInMail : function(event) {
+  //  if (this._overLink == null)
+  //    return;
 
-    var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance(Components.interfaces.nsIMessenger);
-    messenger.SetWindow(window,null);
-    messenger.OpenURL(this._overLink.uri);
-  },
+  //   var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance(Components.interfaces.nsIMessenger);
+  //   messenger.SetWindow(window,null);
+  //   messenger.OpenURL(this._overLink.uri);
+  // },
 
-  openLinkFromMail : function() {
-    if (this._overLink == null)
-      return;
+  // openLinkFromMail : function() {
+  //   if (this._overLink == null)
+  //     return;
 
-    var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance();
-    messenger = messenger.QueryInterface(Components.interfaces.nsIMessenger);
-    try { messenger.launchExternalURL(this._overLink.uri); }
-    catch(e) {
-      var proto = this._overLink.uri.split(/:/)[0];
-      var bundle = document.getElementById("bundle_locallink");
-      alert(bundle.getString("protocolNotFound").replace(/%S/, proto));
-    }
-  },
+  //   var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance();
+  //   messenger = messenger.QueryInterface(Components.interfaces.nsIMessenger);
+  //   try { messenger.launchExternalURL(this._overLink.uri); }
+  //   catch(e) {
+  //     var proto = this._overLink.uri.split(/:/)[0];
+  //     var bundle = document.getElementById("bundle_locallink");
+  //     alert(bundle.getString("protocolNotFound").replace(/%S/, proto));
+  //   }
+  // },
 
 
 //  _getFixupURI : function(uri) {
