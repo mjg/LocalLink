@@ -1,0 +1,104 @@
+---
+layout: default
+---
+
+<!-- ***************** INFO/NEWS *************** -->
+<div id="infoTabs">
+<div class="infoTab" id="whats-new">
+<h5 class="infoHeader">What's New</h5>
+<ul>
+<li>Version 0.5 is compatible with FF up to 6.*</li>
+<li>Version 0.5 is compatible with FF 4.0.*</li>
+<li>Version 0.5 includes french localisation</li>
+<li>Version 0.4 is compatible with FF 3.6</li>
+<li>Git interface</li>
+<li>Version 0.4 is compatible with FF 3.0</li>
+<li>Version 0.4 is compatible with FF 3.0 betas</li>
+<li>Version 0.3 is compatible with FF 2.0</li>
+<li>Version 0.3 for FF 1.5 &amp; TB 1.5</li>
+<li>Version 0.2 for Firefox &amp; Thunderbird</li>
+<li>Version 0.1 for Firefox</li>
+<li><a href="http://www.mozdev.org/">mozdev.org</a></li>
+</ul>
+</div>
+
+<div class="infoTab" id="other-stuff">
+<h5 class="infoHeader">Other Stuff</h5>
+<script type="text/javascript"><!--
+google_ad_client = "pub-5604756703943711";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+google_ad_channel ="5511434859";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<!-- alternative image/table base tab works better in NS4 -->
+<!--
+<div class="infoTab" id="whats-new-image">
+<h5 class="infoHeader"><img src="http://www.mozdev.org/sharedimages/whatsnew_top.gif" width="154" alt="What's New"></h5>
+<div class="infoItems">
+<div>News item goes here</div>
+<div>More news item goes here</div>
+<div><a href="http://mozdev.org/">mozdev.org</a></div>
+</div>
+</div>
+-->
+</div>
+<!-- ***************** INFO/NEWS *************** -->
+
+<!-- MAIN CONTENT -->
+<p>Have you ever wondered why <CODE>file://</CODE>-links work from local files (which have <CODE>file://</CODE>-URLs) but not from webpages (which have <CODE>http://</CODE>-URLs)?
+Do you have collections of local links which you want to access through your webpage? 
+The <strong>LocalLink</strong> extension for Mozilla Firefox and Thunderbird allows you to open any such link from the context menu, no matter where the page containing the link resides:  
+right click on the link, choose &quot;Open&quot;, and the link will be opened in the current window, a new tab or a new window (for Firefox) resp. in the message pane or a browser window (for Thunderbird), depending on the submenu item you chose. </p>
+<P>
+Note: You can open any link from the &quot;Open&quot; menu, not just local links. In particular this allows you to view links in the message pane of Thunderbird instead of in an external browser (if protocol and file handlers are set up appropriately).
+</P>
+<P>
+See <A HREF="installation.html">Installation</A> for download links and instructions.
+</P>
+
+<H3>Background</H3>
+<P>Mozilla employs a strict security model which distinguishes between &quot;chrome&quot; (components of your browser, accessible by <CODE>chrome://</CODE>-URLs), &quot;local&quot; (files on your machine, i.e. accessible by <CODE>file://</CODE>-links) and outside.
+&quot;chrome&quot; can access everything, &quot;local&quot; can access everything but &quot;chrome&quot;, outside content can only access outside content.
+There are many good reasons for this strict behaviour.
+Imagine outside JavaScript code being allowed to access your local files, or even your browser!
+Even with JavaScript turned off, outside webpages could check for the presence of specific local files on your machine if Mozilla followed local <CODE>IMG</CODE>-links and such.
+</P>
+<P> The discussion about the consequences of the security model for the user tends to be heated. For more information see, among many others, the following bugs: 
+</P>
+<UL>
+<LI> <A HREF="https://bugzilla.mozilla.org/show_bug.cgi?id=84128">bug 84128</A>
+<LI> <A HREF="https://bugzilla.mozilla.org/show_bug.cgi?id=122022">bug 122022</A>
+</UL>
+
+<H3>How it works</H3>
+<P>As explained above, &quot;chrome&quot; can do anything. 
+This is why you can enter <CODE>file://</CODE> in the location bar and hit enter.
+Since extensions are part of &quot;chrome&quot; they are allowed to open windows with local links.
+</P>
+
+<H3>Security info and disclaimer</H3>
+<P>As far as I can tell, this extension does not add any security holes.
+&quot;chrome&quot; can do anything even without this extension.
+This extension allows to overcome the local/outside barrier by following local links <strong>on user request</strong> (through the context menu). 
+It does not enable any automatic processing of local links, such as <CODE>IMG</CODE>, JavaScript etc.
+Yet, <strong>you use this extension at your own risk and responsibility</strong>. 
+Make sure you know the source of the webpage containing the local link.
+</P>
+
+<H3>To do</H3>
+<P> Feel free to tell me your suggestions through the <A HREF="list.html" text="mailing list">mailing list</A>.
+My current plans are:</P>
+<UL>
+<LI> Version for Mozilla Suite
+<LI> <SPAN class="struck">Version for Mozilla Thunderbird</SPAN>: done in version 0.2
+<LI> <SPAN class="struck">Universal localisation</SPAN>: done in version 0.2
+<LI> <SPAN class="struck">Additional menu entries for opening the link in the current tab, a new tab, or a new window</SPAN>: done in version 0.2
+</UL>
+
