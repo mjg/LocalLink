@@ -1,0 +1,26 @@
+{
+
+  "manifest_version": 2,
+  "name": "LocalLink",
+  "description": "Open links in local context.",
+  "version": "0.6",
+  "author": "Michael J Gruber",
+  "homepage_url": "https://mjg.github.io/LocalLink/",
+  "default_locale": "en",
+  "applications": {
+    "gecko": {
+      "id": "{15756614-ffb8-498b-b961-bce537ea94fe}",
+      "strict_min_version": "56.0"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  
+  "permissions": [
+    "contextMenus",
+    "activeTab"
+  ]
+  
+}
