@@ -1,0 +1,22 @@
+{
+  "llOpenLocalLink": {
+    "message":  "Open Link in Local Context",
+    "description": "Title of the context menu submenu item for opening the link in a local context."
+  },
+
+  "llOpenInThisTab": {
+    "message":  "in This Tab",
+    "description": "Title of the context menu item that opens the link in a local context in this tab."
+  },
+
+  "llOpenInNewTab": {
+    "message":  "in New Tab",
+    "description": "Title of the context menu item that opens the link in a local context in a new tab."
+  },
+
+  "llOpenInNewWindow": {
+    "message":  "in New Window",
+    "description": "Title of the context menu item that opens the link in a local context in a new window."
+  }
+
+}
