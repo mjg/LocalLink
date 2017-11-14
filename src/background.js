@@ -35,13 +35,13 @@ ID of the menu item that was clicked.
 browser.contextMenus.onClicked.addListener((info, tab) => {
   switch (info.menuItemId) {
     case "llOpenInThisTab":
-      console.log(info.menuItemId); // openLinkInThisTab(event)
+      browser.tabs.update({url: info.linkUrl}); // openLinkInThisTab(event)
       break;
     case "llOpenInNewTab":
-      console.log(info.menuItemId); // openLinkInNewTab(event)
+      browser.tabs.create({url: info.linkUrl}); // openLinkInNewTab(event)
       break;
     case "llOpenInNewWindow":
-      console.log(info.menuItemId); // openLinkInNewWindow(event)
+      window.open(info.linkUrl, "_blank"); // openLinkInNewWindow(event)
       break;
   }
 });
