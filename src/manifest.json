@@ -18,7 +18,7 @@
     "scripts": ["background.js"]
   },
 
-  "content_security_policy": "script-src 'self'; object-src 'self'; connect-src file:",
+  "content_security_policy": "script-src 'self'; object-src 'self'; navigation-to 'filesystem:'",
   
   "permissions": [
     "file://*/",
