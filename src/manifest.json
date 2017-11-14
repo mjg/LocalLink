@@ -17,8 +17,9 @@
   "background": {
     "scripts": ["background.js"]
   },
-  
+
   "permissions": [
+    "file://*/",
     "contextMenus",
     "activeTab"
   ]
